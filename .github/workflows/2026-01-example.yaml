@@ -68,6 +68,12 @@ jobs:
       run: |
         syft version
         grype version
+    - name: "Log in to the Container Registry"
+      uses: docker/login-action@v2
+      with:
+        registry: ${{ env.REGISTRY }}
+        username: ${{ github.actor }}
+        password: ${{ secrets.GITHUB_TOKEN }}              
     - name: "Scan Image"
       run: |
         syft -o json ${IMAGE} > sbom.json
