@@ -66,7 +66,9 @@ jobs:
       with:
         registry: ${{ env.REGISTRY }}
         username: ${{ github.actor }}
-        password: ${{ secrets.GITHUB_TOKEN }}              
+        password: ${{ secrets.GITHUB_TOKEN }}      
+    - name: "Checkout Code"
+      uses: actions/checkout@v4        
     - name: "Scan Image"
       run: |
         syft -o json ${IMAGE} > sbom.json
