@@ -1,0 +1,24 @@
+Scanning SBOM...
+
+❌ github.com/chai2010/gettext-go
+   - Foreign Influence detected in contributor data
+   - https://depsdiver.com/analyze/github.com%2Fchai2010%2Fgettext-go?ecosystem=go
+
+❌ github.com/json-iterator/go
+   - Foreign Influence detected in contributor data
+   - https://depsdiver.com/analyze/github.com%252Fjson-iterator%252Fgo?ecosystem=go
+
+❌ github.com/mailru/easyjson
+   - Foreign Influence detected in location & contributor data
+   - https://depsdiver.com/analyze/github.com%2Fmailru%2Feasyjson?ecosystem=go
+
+❌ github.com/modern-go/concurrent
+   - Foreign Influence detected in contributor data
+   - https://depsdiver.com/analyze/github.com%2Fmodern-go%2Fconcurrent?ecosystem=go
+
+❌ github.com/modern-go/reflect2
+   - Foreign Influence detected in contributor data
+   - https://depsdiver.com/analyze/github.com%2Fmodern-go%2Freflect2?ecosystem=go
+
+FOCI Count: 5
+Exit: 1
