@@ -17,7 +17,7 @@ on:
         
 env:
   REGISTRY: ghcr.io
-  #DEPSDIVER_TOKEN: ${{ secrets.DEPSDIVER_TOKEN }}
+  DEPSDIVER_TOKEN: ${{ secrets.DEPSDIVER_TOKEN }}
      
 jobs:
 
