@@ -74,4 +74,5 @@ jobs:
         syft -o json ${IMAGE} > sbom.json
         grype sbom:./sbom.json
         cat scan.txt
+        exit 1
         #comrade --token ${DEPSDIVER_TOKEN} --fail-on foci sbom:./sbom.json
