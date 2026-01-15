@@ -73,4 +73,4 @@ jobs:
       run: |
         syft -o json ${IMAGE} > sbom.json
         grype sbom:./sbom.json
-        comrade --token ${DEPSDIVER_TOKEN} --fail-on foci sbom:./sbom.json
+        comrade analyze --token ${DEPSDIVER_TOKEN} --fail-on foci sbom:./sbom.json
