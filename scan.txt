@@ -1,24 +1,32 @@
-Scanning SBOM...
+Scanning image (fail-on: foci) ...
 
 ❌ github.com/chai2010/gettext-go
    - Foreign Influence detected in contributor data
-   - https://depsdiver.com/analyze/github.com%2Fchai2010%2Fgettext-go?ecosystem=go
+   - https://github.com/chai2010 - 中国(China)
 
 ❌ github.com/json-iterator/go
+   - Repository is archived
    - Foreign Influence detected in contributor data
-   - https://depsdiver.com/analyze/github.com%252Fjson-iterator%252Fgo?ecosystem=go
+   - https://github.com/taowen - Beijing
+   - https://github.com/cch123 - Beijing
+   - https://github.com/AllenX2018 - Shenzhen
 
 ❌ github.com/mailru/easyjson
    - Foreign Influence detected in location & contributor data
-   - https://depsdiver.com/analyze/github.com%2Fmailru%2Feasyjson?ecosystem=go
+   - https://github.com/mailru - Sanctioned organization
+   - https://github.com/rvasily - Moscow
+   - https://github.com/vstarodub - Moscow
+   - https://github.com/shmel1k - Moscow
 
 ❌ github.com/modern-go/concurrent
    - Foreign Influence detected in contributor data
-   - https://depsdiver.com/analyze/github.com%2Fmodern-go%2Fconcurrent?ecosystem=go
+   - https://github.com/taowen - Beijing
+   - https://github.com/kr1sten0 - Beijing
 
 ❌ github.com/modern-go/reflect2
    - Foreign Influence detected in contributor data
-   - https://depsdiver.com/analyze/github.com%2Fmodern-go%2Freflect2?ecosystem=go
+   - https://github.com/taowen - Beijing
+
 
 FOCI Count: 5
 Exit: 1
