@@ -72,13 +72,18 @@ jobs:
         password: ${{ secrets.GITHUB_TOKEN }}      
     - name: "Scan Image"
       run: |
-        syft -o json ${IMAGE} > sbom.json
+        syft -o json=sbom.json -o spdx-json=spdx.json ${IMAGE}
         grype -o json sbom:./sbom.json > grype-vulnerability-report.json
 
     - name: Display Grype results (table format)
       if: always()
       run: |
         grype sbom:./sbom.json
+
+    - name: Upload SBOM to Dependency Graph
+      uses: advanced-security/spdx-dependency-submission-action@v0.1.1
+      with:
+        filePath: "spdx.json"
 
     - name: Upload vulnerability report
       if: always()
