@@ -78,7 +78,7 @@ jobs:
     - name: Display Grype results (table format)
       if: always()
       run: |
-        grype ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ github.run_number }}
+        grype sbom:./sbom.json
 
     - name: Upload vulnerability report
       if: always()
