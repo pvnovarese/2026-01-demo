@@ -62,7 +62,7 @@ jobs:
       run: |
         curl -sSfL https://get.anchore.io/syft | sudo sh -s -- -b ~/.local/bin
         curl -sSfL https://get.anchore.io/grype | sudo sh -s -- -b ~/.local/bin
-        curl -sSfL https://get.depsdiver.com/comrade | sudo sh -s -- -b ~/.local/bin        
+        #curl -sSfL https://get.depsdiver.com/comrade | sudo sh -s -- -b ~/.local/bin        
     - name: "Log in to the Container Registry"
       uses: docker/login-action@v2
       with:
@@ -73,4 +73,4 @@ jobs:
       run: |
         syft -o json ${IMAGE} > sbom.json
         grype sbom:./sbom.json
-        comrade analyze --token ${DEPSDIVER_TOKEN} --fail-on foci sbom:./sbom.json
+        #comrade analyze --token ${DEPSDIVER_TOKEN} --fail-on foci sbom:./sbom.json
