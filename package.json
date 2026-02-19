@@ -21,7 +21,7 @@
   },
   "devDependencies": {
     "node-notifier": "8.0.0",
-    "tar": "4.4.8"
+    "tar": "7.5.8"
   },
   "keywords": [
     "security",
