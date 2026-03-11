@@ -39,33 +39,33 @@ jobs:
         
     - name: "Grype Pull and Scan"
       run: |
-        grype alpine:latest
-        sleep 5
-        time grype dhi.io/alpine-base:3.23-alpine3.23-dev
-        sleep 5
-        time grype ghcr.io/pvnovarese/2026-01-demo:main
-        sleep 5
-        time grype dhi.io/python:3-debian13-dev
-        sleep 5
-        time grype dhi.io/postgres:18-alpine3.22-dev
-        sleep 5
-        time grype dhi.io/rust:1-debian13-dev
-        sleep 5
+        grype -q alpine:latest
+        sleep 1
+        time -p grype -q dhi.io/alpine-base:3.23-alpine3.23-dev
+        sleep 1
+        time -p grype -q ghcr.io/pvnovarese/2026-01-demo:main
+        sleep 1
+        time -p grype -q dhi.io/python:3-debian13-dev
+        sleep 1
+        time -p grype -q dhi.io/postgres:18-alpine3.22-dev
+        sleep 1
+        ttime -p grype -q -p dhi.io/rust:1-debian13-dev
+        sleep 1
 
     - name: "Grype SBOM Scan"
       run: |        
-        syft -o syft-json=alpine.json dhi.io/alpine-base:3.23-alpine3.23-dev
+        syft -q -o syft-json=alpine.json dhi.io/alpine-base:3.23-alpine3.23-dev
         sleep 1
-        time grype sbom:./alpine.json
-        syft -o syft-json=demo.json ghcr.io/pvnovarese/2026-01-demo:main
+        time -p grype -q sbom:./alpine.json
+        syft -q -o syft-json=demo.json ghcr.io/pvnovarese/2026-01-demo:main
         sleep 1
-        time grype sbom:./demo.json
-        syft -o syft-json=python.json dhi.io/python:3-debian13-dev
+        time -p grype -q sbom:./demo.json
+        syft -q -o syft-json=python.json dhi.io/python:3-debian13-dev
         sleep 1
-        time grype sbom:./python.json
-        syft -o syft-json=postgres.json dhi.io/postgres:18-alpine3.22-dev
+        time -p grype -q sbom:./python.json
+        syft -q -o syft-json=postgres.json dhi.io/postgres:18-alpine3.22-dev
         sleep 1
-        time grype sbom:./postgres.json
-        syft -o syft-json=rust.json dhi.io/rust:1-debian13-dev
+        time -p grype -q sbom:./postgres.json
+        syft -q -o syft-json=rust.json dhi.io/rust:1-debian13-dev
         sleep 1
-        time grype sbom:./rust.json
+        time -p grype -q sbom:./rust.json
