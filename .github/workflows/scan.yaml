@@ -52,7 +52,7 @@ jobs:
         time grype dhi.io/rust:1-debian13-dev
         sleep 5
 
-    - name: "Grype Pull and Scan"
+    - name: "Grype SBOM Scan"
       run: |        
         syft -o syft-json=alpine.json dhi.io/alpine-base:3.23-alpine3.23-dev
         sleep 1
