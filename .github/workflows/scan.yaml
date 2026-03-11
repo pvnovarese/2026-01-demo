@@ -49,7 +49,7 @@ jobs:
         sleep 1
         time -p grype -q dhi.io/postgres:18-alpine3.22-dev
         sleep 1
-        ttime -p grype -q -p dhi.io/rust:1-debian13-dev
+        time -p grype -q dhi.io/rust:1-debian13-dev
         sleep 1
 
     - name: "Grype SBOM Scan"
