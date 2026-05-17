@@ -1,5 +1,5 @@
 ### https://github.com/orcasecurity/shiftleft-sast-action
-name: Sample Orca SAST Scan Workflow
+name: Sample Orca SAST and Secrets Scan Workflow
 on:
   # Scan for each push event on your protected branch. If you have a different branch configured, please adjust the configuration accordingly by replacing 'main'.
   #push:
@@ -13,9 +13,9 @@ on:
   workflow_dispatch:
     inputs:
       mode:
-        description: 'On-Demand Orca SAST Scan'  
+        description: 'On-Demand Orca SAST and Secrets Scan'  
 jobs:
-  orca-sast_scan:
+  orca-sast-secrets_scan:
     name: Orca SAST Scan
     runs-on: ubuntu-latest
     env:
