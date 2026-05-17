@@ -19,6 +19,8 @@ app.use(express.urlencoded({ extended: true }));
 const DATABASE_PASSWORD = 'super_secret_password_123';
 const API_KEY = 'sk-1234567890abcdef';
 const JWT_SECRET = 'my-secret-key';
+const AWS_ACCESS_KEY = 'AKIAIOSFODNN7EXAMPLE';
+const AWS_SECRET_KEY = 'wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY';
 
 // VULNERABILITY 2: Weak cryptographic algorithm (CWE-327)
 function hashPassword(password) {
