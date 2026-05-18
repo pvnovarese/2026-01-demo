@@ -5,8 +5,8 @@ on:
   #push:
   #  branches: ["main"]
   # NOTE: To enable scanning for pull requests, uncomment the section below.
-  #pull_request:
-  #branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
   # NOTE: To schedule a daily scan at midnight, uncomment the section below.
   #schedule:
   #- cron: '0 0 * * *'
