@@ -36,6 +36,7 @@ jobs:
           path: .
           format: "sarif"
           output: "results/"
+          strict_mode: "true"
       - name: Upload SARIF file
         uses: github/codeql-action/upload-sarif@v3
         if: ${{ always() && steps.orcasecurity_sast_scan.outputs.exit_code != 1 }}
