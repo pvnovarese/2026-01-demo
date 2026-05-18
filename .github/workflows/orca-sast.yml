@@ -28,10 +28,16 @@ jobs:
           # Important for pull request diff-awareness report
           fetch-depth: 0
       - name: Run Orca SAST Scan
+        id: orcasecurity_sast_scan
         uses: orcasecurity/shiftleft-sast-action@v1
         with:
           api_token: ${{ secrets.ORCA_SECURITY_API_TOKEN }}
           project_key: ${{ env.PROJECT_KEY }}
-          path:
-            # scanning the entire repository
-            "."
+          path: .
+          format: "sarif"
+          output: "results/"
+      - name: Upload SARIF file
+        uses: github/codeql-action/upload-sarif@v3
+        if: ${{ always() && steps.orcasecurity_sast_scan.outputs.exit_code != 1 }}
+        with:
+          sarif_file: results/sast.sarif
